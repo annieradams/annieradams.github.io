@@ -3,18 +3,22 @@ project:
   output-dir: docs
 
 website:
-  title: "annieradams.github.io"
+  title: "Annie Adams"
   navbar:
     left:
       - href: index.qmd
         text: Home
       - about.qmd
+      - resources.qmd
 
 format:
   html:
-    theme: cosmo
+    theme:
+    light: lumen
+    dark: flatly
     css: styles.css
     toc: true
+    page-layout: full
 
 editor: visual
 

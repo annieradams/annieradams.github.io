@@ -1,11 +1,18 @@
 ---
-title: "annieradams.github.io"
+title: "Annie Adams"
+image: headshot.jpg
+toc: false
+about:
+  template: broadside
+  image-shape: round
+  image-width: 20em
+  links: 
+    - text: LinkedIn
+      href: https://www.linkedin.com/in/annaliese-adams/
+      text: Github
+      href: https://github.com/annieradams
+      text: Email
+      href: mailto:aradams@ucsb.edu
 ---
 
-This is a Quarto website.
-
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
-
-```{r}
-1 + 1
-```
+### Hi there! Welcome to my website! 
