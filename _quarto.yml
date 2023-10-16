@@ -13,7 +13,7 @@ website:
 
 format:
   html:
-    theme:
+    theme: cosmo
     light: lumen
     dark: flatly
     css: styles.css
