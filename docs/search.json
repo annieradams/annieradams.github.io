@@ -1,5 +1,12 @@
 [
   {
+    "objectID": "posts/23-10-23-initial-post/index.html",
+    "href": "posts/23-10-23-initial-post/index.html",
+    "title": "blog post title",
+    "section": "",
+    "text": "I am going to insert a footnote here[^1].\n[^1]: Here is the associated footnote, which will appear at the bottom of my document in a “Footnotes” section.\n\n\n\nCitationBibTeX citation:@online{adams2022,\n  author = {Adams, Annie},\n  title = {Blog Post Title},\n  date = {2022-10-23},\n  url = {https://annieradams.github.io/posts/2022-10-23-initial-post/},\n  langid = {en}\n}\nFor attribution, please cite this work as:\nAdams, Annie. 2022. “Blog Post Title.” October 23, 2022. https://annieradams.github.io/posts/2022-10-23-initial-post/."
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Annie Adams",
@@ -12,5 +19,12 @@
     "title": "About",
     "section": "",
     "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "posts.html",
+    "href": "posts.html",
+    "title": "My Blog",
+    "section": "",
+    "text": "blog post title\n\n\n\nQuarto\n\n\nR\n\n\nMEDS\n\n\nFirst Blog Post!\n\n\n\nThis is where a blog post description lives\n\n\n\nAnnie Adams\n\n\nOct 23, 2022\n\n\n\n\n\n\n\n\nNo matching items"
   }
 ]
