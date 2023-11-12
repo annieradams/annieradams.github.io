@@ -1,9 +1,12 @@
 ---
 title: "About"
+subtitle: "A bit more about me and what I have been up to!"
 ---
 
-About this site
+### The Education
 
-```{r}
-1 + 1
-```
+After getting my Associate's Degree in Mathematics from community college, I discovered the field of data science at UCSB. I quickly grew to love the field, and was ever enamored by the insight our data is capable of telling us. Along the way, I also learned a lot about the ethics of data science, and importance of unbiased data at the point of collection. I took both of these pieces with me as a fellow for the Central Coast Data Science Fellowship (CCDSP). I sat on the outreach committee, where I got to share my new found love of data science with high school students who were not privy to this powerful field. In my final year of my undergrad, I worked with the Energy and Environment Transitions lab on campus (ENVENT) for my capstone project. A team of three undergrads and myself were tasked with analyzing how demographic variables are differentially predictive of climate change opinions, using global survey data. It was during this project that I finally discovered what I wanted to be when I grow up.
+
+### The internship
+
+Immediately after graduating from the University of California, Santa Barbara, with a Bachelor of Science in Statistics and Data Science and a minor in Feminist Studies, I took on an internship with California Cooperative Oceanic Fisheries Investigations (CalCOFI). My role in this internship was to create an interactive data storytelling tool that would inform California Coastal residents on the threat of hypoxia in our California Coastal Ecosystem.

@@ -4,21 +4,28 @@
     "href": "posts/23-10-23-initial-post/index.html",
     "title": "blog post title",
     "section": "",
-    "text": "I am going to insert a footnote here[^1].\n[^1]: Here is the associated footnote, which will appear at the bottom of my document in a “Footnotes” section.\n\n\n\nCitationBibTeX citation:@online{adams2022,\n  author = {Adams, Annie},\n  title = {Blog Post Title},\n  date = {2022-10-23},\n  url = {https://annieradams.github.io/posts/2022-10-23-initial-post/},\n  langid = {en}\n}\nFor attribution, please cite this work as:\nAdams, Annie. 2022. “Blog Post Title.” October 23, 2022. https://annieradams.github.io/posts/2022-10-23-initial-post/."
+    "text": "I am going to insert a footnote here1.\nHere I am citing a blog post. (Csik 2022)"
+  },
+  {
+    "objectID": "posts/23-10-23-initial-post/index.html#footnotes",
+    "href": "posts/23-10-23-initial-post/index.html#footnotes",
+    "title": "blog post title",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nHere is the associated footnote, which will appear at the bottom of my document in a “Footnotes” section.↩︎"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Annie Adams",
     "section": "",
-    "text": "Hi there! Welcome to my website!"
+    "text": "Hi there! Welcome to my website!\nMy name is Annie Adams! I am a current Master of Environmental Data Science candidate at the University of California, Santa Barbara. I am extremely motivated by environmental data and how it can assist in reducing the climate crisis. When I am not behind a computer, I love to hike, cycle, explore new places, and bikepack! Check out the rest of my website to learn more about me and see what I have been up to!"
   },
   {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
+    "text": "The Education\nAfter getting my Associate’s Degree in Mathematics from community college, I discovered the field of data science at UCSB. I quickly grew to love the field, and was ever enamored by the insight our data is capable of telling us. Along the way, I also learned a lot about the ethics of data science, and importance of unbiased data at the point of collection. I took both of these pieces with me as a fellow for the Central Coast Data Science Fellowship (CCDSP). I sat on the outreach committee, where I got to share my new found love of data science with high school students who were not privy to this powerful field. In my final year of my undergrad, I worked with the Energy and Environment Transitions lab on campus (ENVENT) for my capstone project. A team of three undergrads and myself were tasked with analyzing how demographic variables are differentially predictive of climate change opinions, using global survey data. It was during this project that I finally discovered what I wanted to be when I grow up.\n\n\nThe internship\nImmediately after graduating from the University of California, Santa Barbara, with a Bachelor of Science in Statistics and Data Science and a minor in Feminist Studies, I took on an internship with California Cooperative Oceanic Fisheries Investigations (CalCOFI). My role in this internship was to create an interactive data storytelling tool that would inform California Coastal residents on the threat of hypoxia in our California Coastal Ecosystem."
   },
   {
     "objectID": "posts.html",

@@ -16,6 +16,8 @@ draft: false # setting this to `true` will prevent your post from appearing on y
 bibliography: references.bib
 ---
 
-I am going to insert a footnote here\[\^1\].
+I am going to insert a footnote here[^1].
 
-\[\^1\]: Here is the associated footnote, which will appear at the bottom of my document in a "Footnotes" section.
+[^1]: Here is the associated footnote, which will appear at the bottom of my document in a "Footnotes" section.
+
+Here I am citing a blog post. [@csik2022]
