@@ -102,7 +102,7 @@
     "href": "posts.html",
     "title": "My Blog",
     "section": "",
-    "text": "ipynb rendered as html\n\n\nthis post was a rendered from a .ipynb file through quarto\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAnalyzing air quality after the Santa Barbara Thomas Fire\n\n\n\nPython\n\n\nGIS\n\n\nClimate\n\n\nMEDS\n\n\n\nImplement both tabular and raster data to see changes in AQI before and after the Santa Barbara Thomas Fire in 2017.\n\n\n\nAnnie Adams\n\n\nDec 6, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nblog post title\n\n\n\nQuarto\n\n\nR\n\n\nMEDS\n\n\nFirst Blog Post!\n\n\n\nThis is where a blog post description lives\n\n\n\nAnnie Adams\n\n\nOct 23, 2022\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "ipynb rendered as html\n\n\nthis post was a rendered from a .ipynb file through quarto\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSalinity in the CCE\n\n\n\nOcean Analysis\n\n\nGeospatial\n\n\nLinear Regression\n\n\nKriging\n\n\n\nExploring Salinity levels in the California Coastal Ecosystem\n\n\n\nAnnie Adams\n\n\nDec 12, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nAnalyzing air quality after the Santa Barbara Thomas Fire\n\n\n\nPython\n\n\nGIS\n\n\nClimate\n\n\nMEDS\n\n\n\nImplement both tabular and raster data to see changes in AQI before and after the Santa Barbara Thomas Fire in 2017.\n\n\n\nAnnie Adams\n\n\nDec 6, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nblog post title\n\n\n\nQuarto\n\n\nR\n\n\nMEDS\n\n\nFirst Blog Post!\n\n\n\nThis is where a blog post description lives\n\n\n\nAnnie Adams\n\n\nOct 23, 2022\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/aqi-santa-barbara/air_quality_index-sb.html#data",
@@ -110,5 +110,19 @@
     "title": "Analyzing air quality after the Santa Barbara Thomas Fire",
     "section": "",
     "text": "A simplified collection of bands (red, green, blue, near-infrared and shortwave infrared) from the Landsat Collection 2 Level-2 atmosperically corrected surface reflectance data, collected by the Landsat 8 satellite. The data was accessed and pre-processed in the Microsoft Planetary Computer to remove data outside land and coarsen the spatial resolution. Data can be found in the Landsat Collection in the Microsoft Planetary Computer here.\n\n\n\nA shapefile of fire perimeters in California during 2017. The complete file can be accessed in the CA state geoportal.\n\n\n\nA daily reporting of AQI by county for 2017 and 2018. Data reports an AQI value, approximately every 3 -7 days, for counties in every state. Also reports the category for AQI, i.e. “good”. Data reports an AQI value, approximately every 3 -7 days, for 804 counties across every state (as well as Country of Mexico, Puerto Rico, and Virgin Islands).\n\n\n\nCalifornia State Geoportal. 2023. California Fire Perimeters (All). https://gis.data.ca.gov/datasets/CALFIRE-Forestry::california-fire-perimeters-all-1/about (Accessed 2023-11-28).\nNASA, USGS. 2023. Landsat Collection 2 Level-2. Hosted by Microsoft Planetary Computer.https://planetarycomputer.microsoft.com/dataset/landsat-c2-l2 (Accessed 2023-11-22).\nUnited States Environmental Protection Agency. Daily AQI by County.https://aqs.epa.gov/aqsweb/airdata/download_files.html#AQI (Accessed 2023-11-22)."
+  },
+  {
+    "objectID": "posts/salinity_analysis/index.html",
+    "href": "posts/salinity_analysis/index.html",
+    "title": "Salinity in the CCE",
+    "section": "",
+    "text": "Image from NASA"
+  },
+  {
+    "objectID": "posts/salinity_analysis/index.html#footnotes",
+    "href": "posts/salinity_analysis/index.html#footnotes",
+    "title": "Salinity in the CCE",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nUniversity of North Florida. (2023, July 13). Salinity changes threatening marine ecosystems, new study shows. Phys.org. https://phys.org/news/2023-07-salinity-threatening-marine-ecosystems.html↩︎\nOlofsson, P., & Virts, K. (2023, March 7). Addressing needs for sea surface salinity data. Earthdata. NASA. https://www.earthdata.nasa.gov/news/updated-smap-sss-data-products↩︎\nCalifornia Cooperative Oceanic Fisheries Investigations. (2020). CalCOFI Data Collection 2020. Scripps Institution of Oceanography. https://calcofi.org/ccdata/datasets/2020.html↩︎"
   }
 ]
