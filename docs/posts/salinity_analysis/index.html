@@ -189,7 +189,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a></li>
   <li><a href="#analysis" id="toc-analysis" class="nav-link" data-scroll-target="#analysis">Analysis</a></li>
   <li><a href="#conclusions" id="toc-conclusions" class="nav-link" data-scroll-target="#conclusions">Conclusions</a></li>
-  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
   </ul>
 </nav>
     </div>
@@ -211,7 +210,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="introduction" class="level3">
 <h3 class="anchored" data-anchor-id="introduction">Introduction</h3>
-<p>The effect of climate change on salinity is one that has seldom been studied. Along with hypoxia (an inadequate amount of oxygen), salinity levels in the ocean is one that often gets overlooked. Studies find that changes in salinity, due to both climate change and land change, can have huge large effects on both coastal and estuarine ecosystems. Salinity in the ocean can be affected by climate change in multiple ways. Extreme flooding and droughts affect freshwater availability and thus impact salinity within ecosystems.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. Salinity impacts the climate by emitting heat and carbon into the planet. Sea salinity specifically is an important variable for studies related to the water cycle, ocean- atmosphere intereacts, and climate change. <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+<p>The effect of climate change on salinity is one that has seldom been studied. Along with hypoxia (an inadequate amount of oxygen), salinity levels in the ocean is one that often gets overlooked. Studies find that changes in salinity, due to both climate change and land change, can have large effects on both coastal and estuarine ecosystems. Salinity in the ocean can be affected by climate change in multiple ways. Extreme flooding and droughts affect freshwater availability and thus impact salinity within ecosystems.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> Salinity impacts the climate by emitting heat and carbon into the planet. Sea salinity specifically is an important variable for studies related to the water cycle, ocean- atmosphere intereacts, and climate change. <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
 <p>Because climate change can pose such a threat to ecosystems due to a change in salinity, I wanted to explore the properties of salinity a bit more to better understand exactly how they are adversely affected by climate change. In 2010, NASA starting collecting sea surface salinity data through satelites. But another group started collecting samples of salinity long before NASA, and they went deeper than surface level.</p>
 </section>
 <section id="data" class="level3">
@@ -252,7 +251,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>bottle_cast <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"bottle_and_cast.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<p>CalCOFI samples are taken at varying depths at each station. Therefore, deciding how to accurately compare salinity across depth can be tricky. I will first explore how different salinity at different depths is from the mean. To do this, I am going to look at station only. This station is off the coast of Goleta at an on shelf station.</p>
+<p>CalCOFI samples are taken at varying depths at each station. Therefore, deciding how to accurately compare salinity across depth can be tricky. I will first explore how different salinity at different depths is from the mean. To do this, I am going to look at station only. This on shelf station is off the coast of Goleta.</p>
 <div class="cell">
 <details>
 <summary>Code</summary>
@@ -425,8 +424,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </div>
 </div>
-<p>The model above tells us that the predicted salinity at 0 meters deep in the California Coastal ecosystem is 33.45 g/kg. The salinity increases, on average, .0015 g/kg with each meter increase in depth. The <span class="math inline">\(R^2\)</span> for this model is .5192. Meaning that about 51% of our variance can be explained by the depth variable alone.</p>
-<p>Depth seems to be a fairly strong predictor of salinity levels, but perhaps another variable is concurrently affecting the salinity levels. We can control for omitted bavariable bias by adding in another variable to our model. Temperature also changes with depth, so let’s check how our model changes when we run a multiple linear regression with temperature.</p>
+<p>The model above tells us that the predicted salinity at 0 meters deep in the California Coastal ecosystem is 33.45 g/kg. The salinity increases, on average, .0015 g/kg with each meter increase in depth. The <span class="math inline">\(R^2\)</span> for this model is .5192. Meaning that about 52% of our variance can be explained by the depth variable alone.</p>
+<p>Depth seems to be a fairly strong predictor of salinity levels, but perhaps another variable is concurrently affecting the salinity levels. We can control for omitted bavariable bias by adding in another variable to our model. Temperature also changes with depth, so let’s check how our model changes when we run a multiple linear regression with temperature as a predictor.</p>
 </section>
 <section id="multiple-linear-regression" class="level4">
 <h4 class="anchored" data-anchor-id="multiple-linear-regression">Multiple Linear Regression</h4>
@@ -498,8 +497,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </div>
 </div>
-<p>It seems as though predicted salinity levels decrease by .064 for every celsius degree increase in water temperature, holding fixed the depth of the sample. Our <span class="math inline">\(R^2\)</span> for this model increased by about .14. While our <span class="math inline">\(R^2\)</span> did increase, conveying a greater amount of variance explained by these two predictor variables, in is important to note that <span class="math inline">\(R^2\)</span> mechanically increases as more independent variables are added to the regression. With an <span class="math inline">\(R^2\)</span> of .66, we can say that about 66% of variance in our data is explained by both depth level and temperature.</p>
-<p>To finish off my analysis, I wanted to spatially interpolate average salinity levels in the ocean. To do this, I will use kriging. Kriging relies on an estimated variogram, a function that describes the relationship between the distance and the covariance in “Z”. In my case, “Z” is the average salinity levels. Prior to doing this, I will make some decisions about filtering my data for the interpolation. The data has many observations at each unique geographic site ( since multiple samples are collected at each station each year). Since the variogram only takes in unique geometries, I will filter for only the year 2020, the most recent year in the dataset. Since each station took a sample at 0 meters, I will also filter to take the mean salinity across depth 0. This will the interpolation to not be skewed by the depth, since we know by now that depth explains a significant amount of the variance for predicting salinity. Let’s plot this new filtered data that we will use for the variogram.</p>
+<p>It seems as though predicted salinity levels decrease by .064 for every celsius degree increase in water temperature, holding fixed the depth of the sample. Our <span class="math inline">\(R^2\)</span> for this model increased by about .14. While our <span class="math inline">\(R^2\)</span> did increase, conveying a greater amount of variance explained by these two predictor variables, it is important to note that <span class="math inline">\(R^2\)</span> mechanically increases as more independent variables are added to the regression. With an <span class="math inline">\(R^2\)</span> of .66, we can say that about 66% of variance in our data is explained by both depth level and temperature.</p>
+<p>To finish off my analysis, I want to spatially interpolate average salinity levels in the ocean to visualize how salinity changes geographically. To do this, I will use kriging. Kriging relies on an estimated variogram, a function that describes the relationship between the distance and the covariance in “Z”. In my case, “Z” is the average salinity levels. Prior to doing this, I will make some decisions about filtering my data for the interpolation. The data has many observations at each unique geographic site ( since multiple samples are collected at each station each year). Since the variogram only takes in unique geometries, I will filter for only the year 2020, the most recent year in the dataset. Since each station took a sample at 0 meters, I will also filter to take the mean salinity across depth 0. This will allow the interpolation to not be skewed by the depth, since we know by now that depth explains a significant amount of the variance for predicting salinity. Let’s plot this new filtered data that we will use for the variogram.</p>
 </section>
 <section id="variogram" class="level4">
 <h4 class="anchored" data-anchor-id="variogram">Variogram</h4>
@@ -591,7 +590,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><img src="index_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<p>The interpolation follows a similar trend as our original data, but we can now visualize how mean surface level salinity likely varied in the California Coastal ecosystem in 2020! The interpolation seems to suggest that perhaps latitude also has an effect on salinity levels. Let’s do one last quick regression, adding latitude as a predictor!</p>
+<p>The interpolation follows a similar trend as our original data, but we can now visualize how mean surface level salinity likely varied in the California Coastal Ecosystem in 2020! The interpolation seems to suggest that perhaps latitude also has an effect on salinity levels. Let’s do one last quick regression, adding latitude as a predictor!</p>
 </section>
 <section id="one-last-multiple-linear-regression" class="level4">
 <h4 class="anchored" data-anchor-id="one-last-multiple-linear-regression">One last multiple linear regression!</h4>
@@ -674,9 +673,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="conclusions" class="level3">
 <h3 class="anchored" data-anchor-id="conclusions">Conclusions</h3>
 <p>We have looked into salinity in many different ways! This analysis discovered some different properties of salinity that can better help us to understand how the salinity in the CCE can be affected by climate change. Salinity tends to increase with depth. We saw through the simple linear regression model that depth alone explains a lot of the variance in predicting salinity levels. Temperature seems to play into salinity levels, but not nearly at the same rate that depth does. A more consistent depth sampling method would have allowed us to draw more conclusions about the role that depths plays in predicting salinity levels.</p>
-</section>
-<section id="section" class="level3">
-<h3 class="anchored" data-anchor-id="section"></h3>
 
 
 </section>
