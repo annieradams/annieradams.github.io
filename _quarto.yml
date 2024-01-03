@@ -6,30 +6,34 @@ website:
   open-graph: true
   site-url: https://annieradams.github.io/
   favicon: images/AA-logo-white.png
+
 navbar:
     title: false
     logo: images/AA_wname_logo_black.png
-    left:
+    right:
       - href: index.qmd
         text: Home
       - about.qmd
       - resources.qmd
       - posts.qmd
-    right:
       - icon: github
         href: https://github.com/annieradams
+
 page-footer:
-    center: "Copyright 2023, Annie Adams"
-    background: secondary
+    background: light
+    left: "Copyright 2023, Annie Adams"
+
 
 format:
   html:
-    theme: 
+    page-layout: full
+    sidebar: false
+    theme:
       - styles.scss
     mainfont: lato
     #css: styles.css
     toc: true
-    page-layout: full
+    
 
-editor: visual
+#editor: visual
 
