@@ -1,6 +1,6 @@
 ---
 title: "Annie Adams"
-image: headshot.jpg
+image: images/headshot.jpg
 toc: false
 about:
   template: jolla

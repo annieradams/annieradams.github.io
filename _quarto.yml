@@ -18,6 +18,11 @@ website:
       - posts.qmd
       - icon: github
         href: https://github.com/annieradams
+      - icon: linkedin
+        href: https://www.linkedin.com/in/annaliese-adams/
+      - icon: envelope-fill
+        href: mailto:aradams@ucsb.edu
+      
 
   page-footer:
     background: light
