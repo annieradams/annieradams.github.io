@@ -11,6 +11,12 @@ website:
       - about.qmd
       - resources.qmd
       - posts.qmd
+    right:
+      - icon: github
+        href: https://github.com/annieradams
+    page-footer:
+    center: "Copyright 2023, Annie Adams"
+    background: secondary
 
 format:
   html:

@@ -5,14 +5,17 @@ toc: false
 about:
   template: trestles
   image-shape: round
-  image-width: 20em
+  image-width: 10cm
   links: 
     - text: LinkedIn
       href: https://www.linkedin.com/in/annaliese-adams/
+      icon: linkedin
     - text: Github
       href: https://github.com/annieradams
+      icon: github
     - text: Email
       href: mailto:aradams@ucsb.edu
+      icon: envelope-fillq
 ---
 
 ### Hi there! Welcome to my website!
