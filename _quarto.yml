@@ -25,9 +25,7 @@ website:
 format:
   html:
     theme: styles.scss
-    light: lumen
-    dark: flatly
-    css: styles.css
+    #css: styles.css
     toc: true
     page-layout: full
 
