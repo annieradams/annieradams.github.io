@@ -15,7 +15,7 @@ about:
       icon: github
     - text: Email
       href: mailto:aradams@ucsb.edu
-      icon: envelope-fillq
+      icon: envelope-fill
 ---
 
 ### Hi there! Welcome to my website!

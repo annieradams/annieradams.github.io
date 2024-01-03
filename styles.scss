@@ -1,0 +1,40 @@
+/*-- scss:defaults --*/
+
+
+// Colors
+$mint: #dde7dd;
+$earth-green: #6a8f6b;
+$midnight-blue: #221c42;
+$pale: #ffe0c9;
+$white: #ffffff;
+$purple: #9158A2;
+$gray: #64605f;
+$cream: #F4F3EE;
+$light-gray: #d3d3d3; 
+
+
+
+$Sand-Tan: #e1b382;
+$Sand-Tan-Shadow: #c89666;
+$Night-Blue: #2d545e;
+$Night-Blue-Shadow: #12343b;
+$tan: #EBCCAB;
+
+
+
+
+// Base document colors
+$navbar-bg: $Night-Blue; // navbar
+$navbar-fg: $tan; // navbar foreground elements
+$navbar-hl: $purple; // highlight color when hovering over navbar links
+$body-bg: $tan; // page background 
+$body-color: $Night-Blue; // page text 
+$footer-bg: $Night-Blue; // footer 
+$link-color: $purple; // hyperlinks 
+
+// Inline code
+$code-bg: $cream; // inline code background color
+$code-color: $purple; // inline code text color
+
+// Code blocks
+$code-block-bg: $cream; // code block background color

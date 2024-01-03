@@ -3,8 +3,12 @@ project:
   output-dir: docs
 
 website:
-  title: "Annie Adams"
+  open-graph: true
+  site-url: https://annieradams.github.io/
+  favicon: images/AA-logo-white.png
   navbar:
+    title: false
+    logo: images/AA-logo.png
     left:
       - href: index.qmd
         text: Home
@@ -20,7 +24,7 @@ website:
 
 format:
   html:
-    theme: cosmo
+    theme: styles.scss
     light: lumen
     dark: flatly
     css: styles.css
