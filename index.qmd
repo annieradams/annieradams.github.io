@@ -3,7 +3,7 @@ title: "Annie Adams"
 image: headshot.jpg
 toc: false
 about:
-  template: trestles
+  template: jolla
   image-shape: round
   image-width: 10cm
   links: 
