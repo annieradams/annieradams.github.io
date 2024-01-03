@@ -7,7 +7,7 @@ website:
   site-url: https://annieradams.github.io/
   favicon: images/AA-logo-white.png
 
-navbar:
+  navbar:
     title: false
     logo: images/AA_wname_logo_black.png
     right:
@@ -19,7 +19,7 @@ navbar:
       - icon: github
         href: https://github.com/annieradams
 
-page-footer:
+  page-footer:
     background: light
     left: "Copyright 2023, Annie Adams"
 
@@ -35,5 +35,5 @@ format:
     toc: true
     
 
-#editor: visual
+editor: visual
 
