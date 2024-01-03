@@ -6,7 +6,7 @@ website:
   open-graph: true
   site-url: https://annieradams.github.io/
   favicon: images/AA-logo-white.png
-  navbar:
+navbar:
     title: false
     logo: images/AA_wname_logo_black.png
     left:
