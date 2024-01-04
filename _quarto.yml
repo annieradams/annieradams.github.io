@@ -5,16 +5,15 @@ project:
 website:
   open-graph: true
   site-url: https://annieradams.github.io/
-  favicon: images/AA-logo-white.png
+  favicon: images/logos/AA-logo-white.png
 
   navbar:
     title: false
-    logo: images/AA_wname_logo_black.png
+    logo: images/logos/AA_wname_logo_black.png
     right:
       - href: index.qmd
         text: Home
       - about.qmd
-      - resources.qmd
       - posts.qmd
       - icon: github
         href: https://github.com/annieradams
