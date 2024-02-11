@@ -30,13 +30,13 @@ How big of an effect does depth have on salinity levels off the California Coast
 
 ### Introduction
 
-The effect of climate change on salinity is one that has seldom been studied. Along with hypoxia (an inadequate amount of oxygen), salinity levels in the ocean is one that often gets overlooked. Studies find that changes in salinity, due to both climate change and land change, can have large effects on both coastal and estuarine ecosystems. Salinity in the ocean can be affected by climate change in multiple ways. Extreme flooding and droughts affect freshwater availability and thus impact salinity within ecosystems.[^1] Salinity impacts the climate by emitting heat and carbon into the planet. Sea salinity specifically is an important variable for studies related to the water cycle, ocean- atmosphere intereacts, and climate change. [^2]
+The effect of climate change on salinity is one that has seldom been studied. Along with hypoxia (an inadequate amount of oxygen), salinity levels in the ocean is one that often gets overlooked. Studies find that changes in salinity, due to both climate change and land change, can have large effects on both coastal and estuarine ecosystems. Salinity in the ocean can be affected by climate change in multiple ways. Extreme flooding and droughts affect freshwater availability and thus impact salinity within ecosystems.[^1] Salinity impacts the climate through its inverse relationship with sea ice cover, thus emitting heat and carbon into the planet. Sea salinity specifically is an important variable for studies related to the water cycle, ocean- atmosphere intereactions, and climate change. [^2]
 
 [^1]: University of North Florida. (2023, July 13). Salinity changes threatening marine ecosystems, new study shows. Phys.org. https://phys.org/news/2023-07-salinity-threatening-marine-ecosystems.html
 
 [^2]: Olofsson, P., & Virts, K. (2023, March 7). Addressing needs for sea surface salinity data. Earthdata. NASA. https://www.earthdata.nasa.gov/news/updated-smap-sss-data-products
 
-Because climate change can pose such a threat to ecosystems due to a change in salinity, I wanted to explore the properties of salinity a bit more to better understand exactly how they are adversely affected by climate change. In 2010, NASA starting collecting sea surface salinity data through satelites. But another group started collecting samples of salinity long before NASA, and they went deeper than surface level.
+Because climate change can pose such a threat to ecosystems due to a change in salinity, I wanted to explore the properties of salinity a bit more to better understand exactly how they are adversely affected by climate change. In 2010, NASA starting collecting sea surface salinity data through satellites. But another group started collecting samples of salinity long before NASA, and they went deeper than surface level.
 
 ### Data
 
@@ -131,7 +131,7 @@ ggplot(combined_data, aes(x = Date, y = Salinity, color = Depthm)) +
 
 ```
 
-The mean salinity in this graph doesn't look too different from the salinitys at the different depths. However, we are only sampling 20 meters deep here. Is this because this station is in shallower waters so the variance is smaller for mean salinity, and our values are therefore pretty close to the mean? Or does salinity at all depths stay pretty consistent? We will see if we can get any insights into this question by plotting the mean salinity of the station above, and a different station that is a bit farther off the coast. The second station we will be looking at is directly behind Santa Rosa Channel Island. Let's see how these two station's mean salinity levels compare.
+The mean salinity in this graph doesn't look too different from the salinites at the different depths. However, we are only sampling 20 meters deep here. Is this because this station is in shallower waters so the variance is smaller for mean salinity, and our values are therefore pretty close to the mean? Or does salinity at all depths stay pretty consistent? We will see if we can get any insights into this question by plotting the mean salinity of the station above, and a different station that is a bit farther off the coast. The second station we will be looking at is directly behind Santa Rosa Channel Island. Let's see how these two station's mean salinity levels compare.
 
 ```{r warning=FALSE, message=FALSE}
 #get mean salinity levels for santa rosa station 
@@ -204,7 +204,7 @@ table_output
 
 The model above tells us that the predicted salinity at 0 meters deep in the California Coastal ecosystem is 33.45 g/kg. The salinity increases, on average, .0015 g/kg with each meter increase in depth. The $R^2$ for this model is .5192. Meaning that about 52% of our variance can be explained by the depth variable alone.
 
-Depth seems to be a fairly strong predictor of salinity levels, but perhaps another variable is concurrently affecting the salinity levels. We can control for omitted bavariable bias by adding in another variable to our model. Temperature also changes with depth, so let's check how our model changes when we run a multiple linear regression with temperature as a predictor.
+Depth seems to be a fairly strong predictor of salinity levels, but perhaps another variable is concurrently affecting the salinity levels. We can control for omitted variable bias by adding in another variable to our model. Temperature also changes with depth, so let's check how our model changes when we run a multiple linear regression with temperature as a predictor.
 
 #### Multiple Linear Regression
 

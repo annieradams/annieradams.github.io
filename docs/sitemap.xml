@@ -1,23 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://annieradams.github.io/index.html</loc>
-    <lastmod>2024-01-04T03:32:23.197Z</lastmod>
+    <loc>https://annieradams.github.io/resources.html</loc>
+    <lastmod>2024-02-11T01:22:49.814Z</lastmod>
   </url>
   <url>
     <loc>https://annieradams.github.io/about.html</loc>
-    <lastmod>2024-01-04T03:32:27.812Z</lastmod>
+    <lastmod>2024-02-11T01:22:49.157Z</lastmod>
   </url>
   <url>
-    <loc>https://annieradams.github.io/resources.html</loc>
-    <lastmod>2024-01-03T21:11:33.724Z</lastmod>
+    <loc>https://annieradams.github.io/posts/blackout_houston_post/index.html</loc>
+    <lastmod>2024-02-11T01:22:48.633Z</lastmod>
+  </url>
+  <url>
+    <loc>https://annieradams.github.io/posts/salinity_analysis/index.html</loc>
+    <lastmod>2024-02-11T01:22:46.239Z</lastmod>
+  </url>
+  <url>
+    <loc>https://annieradams.github.io/posts/aqi-santa-barbara/air_quality_index-sb.html</loc>
+    <lastmod>2024-02-11T01:22:48.140Z</lastmod>
+  </url>
+  <url>
+    <loc>https://annieradams.github.io/index.html</loc>
+    <lastmod>2024-02-11T01:22:48.849Z</lastmod>
   </url>
   <url>
     <loc>https://annieradams.github.io/posts.html</loc>
-    <lastmod>2024-01-04T04:02:52.552Z</lastmod>
-  </url>
-  <url>
-    <loc>https://annieradamsq.github.io/index.html</loc>
-    <lastmod>2024-01-03T04:07:12.115Z</lastmod>
+    <lastmod>2024-02-11T01:22:49.602Z</lastmod>
   </url>
 </urlset>

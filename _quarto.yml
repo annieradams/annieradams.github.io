@@ -15,12 +15,21 @@ website:
         text: Home
       - about.qmd
       - posts.qmd
+      - href: resume/aradams.pdf
+        text: Resume
+      - text: Contact Info
+        menu:
+          - icon: linkedin
+            text: LinkedIn
+            href: https://www.linkedin.com/in/annaliese-adams/
+            target: _blank
+          - icon: envelope-fill
+            text: email
+            href: mailto:aradams@ucsb.edu
       - icon: github
         href: https://github.com/annieradams
-      - icon: linkedin
-        href: https://www.linkedin.com/in/annaliese-adams/
-      - icon: envelope-fill
-        href: mailto:aradams@ucsb.edu
+    
+  
       
 
   page-footer:
