@@ -4,6 +4,7 @@
 
 //Import Fonts
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
 
 // Colors
@@ -26,7 +27,7 @@ $Night-Blue-Shadow: #12343b;
 $tan: #EBCCAB;
 
 
-
+$font-family-montserrat: 'Montserrat', sans-serif; 
 
 
 
@@ -45,3 +46,11 @@ $code-color: $purple; // inline code text color
 
 // Code blocks
 $code-block-bg: $cream; // code block background color
+
+
+
+
+/*-- scss:rules --*/
+.custom-montserrat-text { 
+  font-family: $font-family-montserrat;
+}
