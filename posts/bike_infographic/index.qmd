@@ -20,7 +20,7 @@ css: custom-style.css
 
 ## Infographic Overview
 
-As an avid bike rider and lover of alternative transit, I played around with some bike data from Seattle and created an infographic to showcase the trends that I found.I wanted to inform viewers on how bike usage changes seasonally and annually in Seattle, Washington. My goals of this infographic were to quantify the general number of bikes on the road in Seattle, compare bike usage across six different bike counting locations, and look into seasonal biking trends. In order to do this, I utilized data from Data.Seattle.gov. [^1] I specifically utilized 6 different data sets that are all analogous in structure, but each for a different location. Each dataset contains four columns: the date, the number of bikes counted that were travelling northbound, the number of bikes counted that were travelling southbound, and the total number of bikes counted (the northbound column + the southbound column). The date column includes hourly data, so each observation in the dataset is a date and an individual hour. When I aggregated the six different locations into one data set, I added a column to specify the location, and removed the north and south bound columns.
+As an avid bike rider and lover of alternative transit, I played around with some bike data from Seattle and created an infographic to showcase the trends that I found. I wanted to inform viewers on how bike usage changes seasonally and annually in Seattle, Washington. My goals of this infographic were to quantify the general number of bikes on the road in Seattle, compare bike usage across six different bike counting locations, and look into seasonal biking trends. In order to do this, I utilized data from Data.Seattle.gov. [^1] I specifically utilized 6 different data sets that are all analogous in structure, but each for a different location. Each dataset contains four columns: the date, the number of bikes counted that were travelling northbound, the number of bikes counted that were travelling southbound, and the total number of bikes counted (the northbound column + the southbound column). The date column includes hourly data, so each observation in the dataset is a date and an individual hour. When I aggregated the six different locations into one data set, I added a column to specify the location, and removed the north and south bound columns.
 
 [^1]: Seattle Department of Transportation. (2023). Bike Counters. https://www.seattle.gov/transportation/projects-and-programs/programs/bike-program/bike-counters
 
@@ -42,6 +42,7 @@ htmltools::tags$iframe(style="width:100%; height:600px;", src="output/infographi
 ```
 
 ## Code for Infographic Elements
+
 ##### **Note that visualizations below are scaled to fit onto the infographic and not for stand alone purposes**
 
 ### Load Libraries
