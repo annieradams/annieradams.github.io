@@ -2,20 +2,20 @@
 title: "Streamlining Carbon Accounting for Darn Tough Vermont"
 description: "How we helped a sock manufacturer calculate their carbon emissions and pinpoint ways to meet reduction targets"
 author: 
-    name: Annie Adams, Carly Caswell, Flora Hamilton, Linus Ghanadan
+    name: Annie Adams, Carly Caswell,Flora Hamilton, Linus Ghanadan
     url: https://annieradams.github.io
-    affiliation: Bren School of Environmental Science and Management
+    affiliation:      Bren School of Environmental Science and Management
     affiliation-url: https://ucsb-meds.github.io
-    date: "June 18, 2024"
-    categories: [R, Shiny, Carbon accounting]
-    output:
-      html_document:
-        print_df: paged
-        toc: yes
-        toc_depth: 4
-        toc_float: yes
-    image: ../preview.jpg
-    toc: true
+date: "June 18, 2024"
+categories: [R, Shiny, Carbon accounting]
+output:
+    html_document:
+    print_df: paged
+    toc: yes
+    toc_depth: 4
+    toc_float: yes
+image: preview.jpg
+toc: true
 ---
 
 ```{r echo=FALSE, out.width='100%'}
