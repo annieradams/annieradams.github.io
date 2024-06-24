@@ -20,4 +20,4 @@ about:
 
 ### Hi there! Welcome to my website!
 
-My name is Annie Adams! I am a current Master of Environmental Data Science candidate at the University of California, Santa Barbara. I am extremely motivated by environmental data and how it can assist in reducing the climate crisis. When I am not behind a computer, I love to hike, cycle, explore new countries, and bikepack! Check out the rest of my website to learn more about me and see what I have been up to!
+My name is Annie Adams! I am a recent graduate of the Master of Environmental Data Science program at the University of California, Santa Barbara. I am extremely motivated by environmental data and how it can assist in reducing the climate crisis. When I am not behind a computer, I love to hike, cycle, explore new countries, and bikepack! Check out the rest of my website to learn more about me and see what I have been up to!
