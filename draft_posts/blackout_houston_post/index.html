@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2023-12-12">
+<meta name="description" content="Determining just how many houses in Houston, Texas lost power due to the 2021 storm">
+
+<title>Quantifying Houston Blackouts after Texas’ 2021 Winter Storm</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../images/logos/AA-logo-white.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<meta property="og:title" content="Quantifying Houston Blackouts after Texas’ 2021 Winter Storm">
+<meta property="og:description" content="Determining just how many houses in Houston, Texas lost power due to the 2021 storm">
+<meta property="og:image" content="https://annieradams.github.io/posts/blackout_houston_post/houston_img.jpg">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../images/logos/AA_wname_logo_black.png" alt="" class="navbar-logo">
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html" rel="" target="">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html" rel="" target="">
+ <span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../posts.html" rel="" target="">
+ <span class="menu-text">My Blog</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../resume/aradams.pdf" rel="" target="">
+ <span class="menu-text">Resume</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-contact-info" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">Contact Info</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-contact-info">    
+        <li>
+    <a class="dropdown-item" href="https://www.linkedin.com/in/annaliese-adams/" rel="" target="_blank"><i class="bi bi-linkedin" role="img">
+</i> 
+ <span class="dropdown-text">LinkedIn</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="mailto:aradams@ucsb.edu" rel="" target=""><i class="bi bi-envelope-fill" role="img">
+</i> 
+ <span class="dropdown-text">email</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/annieradams" rel="" target=""><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-page-left">
+      <h1 class="title">Quantifying Houston Blackouts after Texas’ 2021 Winter Storm</h1>
+                  <div>
+        <div class="description">
+          Determining just how many houses in Houston, Texas lost power due to the 2021 storm
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">Geospatial</div>
+                <div class="quarto-category">R</div>
+                <div class="quarto-category">Raster data</div>
+                <div class="quarto-category">Vector data</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">December 12, 2023</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#background" id="toc-background" class="nav-link active" data-scroll-target="#background">Background</a></li>
+  <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a></li>
+  <li><a href="#analysis" id="toc-analysis" class="nav-link" data-scroll-target="#analysis">Analysis</a>
+  <ul class="collapse">
+  <li><a href="#find-locations-of-blackouts" id="toc-find-locations-of-blackouts" class="nav-link" data-scroll-target="#find-locations-of-blackouts">Find locations of blackouts</a></li>
+  <li><a href="#exclude-highways-from-blackout-mask" id="toc-exclude-highways-from-blackout-mask" class="nav-link" data-scroll-target="#exclude-highways-from-blackout-mask">Exclude highways from blackout mask</a></li>
+  <li><a href="#find-homes-impacted-by-blackouts" id="toc-find-homes-impacted-by-blackouts" class="nav-link" data-scroll-target="#find-homes-impacted-by-blackouts">Find homes impacted by blackouts</a></li>
+  <li><a href="#investigate-socioeconomic-factors" id="toc-investigate-socioeconomic-factors" class="nav-link" data-scroll-target="#investigate-socioeconomic-factors">Investigate socioeconomic factors</a></li>
+  <li><a href="#is-median-income-related-to-outages" id="toc-is-median-income-related-to-outages" class="nav-link" data-scroll-target="#is-median-income-related-to-outages">Is median income related to outages?</a></li>
+  <li><a href="#results-and-limitations" id="toc-results-and-limitations" class="nav-link" data-scroll-target="#results-and-limitations">Results and Limitations</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+
+
+
+
+<section id="background" class="level2">
+<h2 class="anchored" data-anchor-id="background">Background</h2>
+<section id="houston-we-have-a-problem." class="level5">
+<h5 class="anchored" data-anchor-id="houston-we-have-a-problem.">Houston, we have a problem.</h5>
+<p>“In February 2021, the state of Texas suffered a major power crisis, which came about as a result of three severe winter storms sweeping across the United States on February 10–11, 13–17, and 15–20.”<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. Because Texas is on its own power grid, it was not able to easily get access to power from other states.Therefore, it felt the effects of this winter storm at a much more servere rate than neighboring states that were experiencing the same exact storm. Some buildings lost power for five days straight, affecting a total of 4 million Texans.</p>
+</section>
+</section>
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>I will utilize a few different datasets to attempt to determine just how many buildings lost power in this storm. To classify the number of houses, I am going to use satelite data from before/ during the outage. I will focus specifically on Houston. I will first estimate the number of homes in Houston that lost power due to the storm, and then will explore if socioeconomic factors are predictors of communities recovery from a power outage.</p>
+</section>
+<section id="data" class="level2">
+<h2 class="anchored" data-anchor-id="data">Data</h2>
+<section id="night-lights-data" class="level4">
+<h4 class="anchored" data-anchor-id="night-lights-data">Night lights data</h4>
+<p>I will sse NASA’s Worldview to explore the data around the day of the storm. There are several days with too much cloud cover to be useful, but 2021-02-07 and 2021-02-16 provide two clear, contrasting images to visualize the extent of the power outage in Texas. Additionally, I will utilize VIIRS data, which is distributed through NASA’s <a href="https://ladsweb.modaps.eosdis.nasa.gov/">Level-1 and Atmospheric Archive &amp; Distribution System Distributed Active Archive Center (LAADS DAAC)</a>. Many NASA Earth data products are distributed in 10x10 degree tiles in sinusoidal equal-area projection. Tiles are identified by their horizontal and vertical position in the grid. Datasets that were previously prepped and cleaned will be utilized.</p>
+<ul>
+<li><code>VNP46A1.A2021038.h08v05.001.2021039064328.h5.tif</code>: tile h08v05, collected on 2021-02-07</li>
+<li><code>VNP46A1.A2021038.h08v06.001.2021039064329.h5.tif</code>: tile h08v06, collected on 2021-02-07</li>
+<li><code>VNP46A1.A2021047.h08v05.001.2021048091106.h5.tif</code>: tile h08v05, collected on 2021-02-16</li>
+<li><code>VNP46A1.A2021047.h08v06.001.2021048091105.h5.tif</code>: tile h08v06, collected on 2021-02-16</li>
+</ul>
+</section>
+<section id="road-data" class="level4">
+<h4 class="anchored" data-anchor-id="road-data">Road data</h4>
+<p>To prevent misrepresenting roads as building lights, I will utilize this road dataset. <a href="https://planet.openstreetmap.org/">OpenStreetMap (OSM)</a> is a collaborative project which creates publicly available geographic data of the world. Ingesting this data into a database where it can be subsetted and processed is a large undertaking. Fortunately, third party companies redistribute OSM data. I will use a prepared Geopackage containing just the subset of roads that intersect the Houston metropolitan area that got the data from <a href="https://download.geofabrik.de/">Geofabrik’s download sites</a>.</p>
+<ul>
+<li><code>gis_osm_roads_free_1.gpkg</code></li>
+</ul>
+</section>
+<section id="house-data" class="level4">
+<h4 class="anchored" data-anchor-id="house-data">House data</h4>
+<p>I can also obtain building data from OpenStreetMap to quantiy where the houses in Houston are. I will once again be using a preloaded package containing only houses in the Houston metropolitan area, with data coming from Geofabrick.</p>
+<ul>
+<li><code>gis_osm_buildings_a_free_1.gpkg</code></li>
+</ul>
+</section>
+<section id="socioeconomic-data" class="level4">
+<h4 class="anchored" data-anchor-id="socioeconomic-data">Socioeconomic data</h4>
+<p>Socioeconomic information for every home is not readily available, so instead I obtained data from the <a href="https://www.census.gov/programs-surveys/acs">U.S. Census Bureau’s American Community Survey</a> for census tracts in 2019. The <em>folder</em> <code>ACS_2019_5YR_TRACT_48.gdb</code> is an ArcGIS <a href="https://desktop.arcgis.com/en/arcmap/latest/manage-data/administer-file-gdbs/file-geodatabases.htm">“file geodatabase”</a>, a multi-file proprietary format that’s roughly analogous to a GeoPackage file. Each layer of the geodatabase contains a subset of the fields documents in the <a href="https://www2.census.gov/geo/docs/maps-data/data/tiger/prejoined/ACSMetadata2011.txt">ACS metadata</a>.&nbsp;The geodatabase contains a layer holding the geometry information, separate from the layers holding the ACS attributes.</p>
+<p>Now that the data have been reviewed, here is a preview into the steps I will be taking!</p>
+<p>- Find locations that experienced a blackout of more than 200 nW cm<sup>-2</sup>sr<sup>-1</sup></p>
+<p>- Exclude highways that are within 200 meters of homes</p>
+<p>- Find number of homes that experienced a blackout with given the two conditions mentioned above</p>
+<p>- Compare blackout areas with socioecnomic factors to see if there is any correlation</p>
+</section>
+</section>
+<section id="analysis" class="level2">
+<h2 class="anchored" data-anchor-id="analysis">Analysis</h2>
+<section id="find-locations-of-blackouts" class="level3">
+<h3 class="anchored" data-anchor-id="find-locations-of-blackouts">Find locations of blackouts</h3>
+<p>Let’s first explore the effect the storm had on all of Houston in terms of outages. We will classify any drop of more than 200 nW cm<sup>-2</sup>sr<sup>-1</sup> to be considered a blackout.</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="index_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>This image shows the areas that experienced a blackout of more than 200 nW cm<sup>-2</sup>sr<sup>-1</sup> in Houston between February 7th and February 16th. These points are in the general vacinity of Houston and includes far beyond just buildings. This raster is a starting point and we will use it to select homes as a next step.</p>
+</section>
+<section id="exclude-highways-from-blackout-mask" class="level3">
+<h3 class="anchored" data-anchor-id="exclude-highways-from-blackout-mask">Exclude highways from blackout mask</h3>
+<p>Since we want to exclude highways so that we are not including them as houses to be counted, we can create a buffer of 200 meters from all highways and then disjoin the buffer and the previous vectorized blackout data to exclude the buffered area. Therefore, we will only be including houses that are at least 200 meters away from a highway. As a reminder, we are going to use EPSG:3083 (NAD83 / Texas Centric Albers Equal Area) for all areas of interest in this analysis.</p>
+<p>Setting a buffer of 200 meters around houses means that any house that is within 200 meters of a highway will not be included in our analysis. This is because highways give off a lot of light from cars on the road. We want to be sure that the light we are picking up when trying to quantify the number of houses that experienced a blackout is starting with homes and not highways.</p>
+</section>
+<section id="find-homes-impacted-by-blackouts" class="level3">
+<h3 class="anchored" data-anchor-id="find-homes-impacted-by-blackouts">Find homes impacted by blackouts</h3>
+<p>I will now account for the homes within the new selected area. I can do so by filtering to areas in our most recent <code>highway_mask</code> vector. Doing so will give me buildings in Houston that experienced a drop of more than 200 nW cm<sup>-2</sup>sr<sup>-1</sup> in areas that are farther than 200 meters from a highway. The number of houses can be obtained simply by counting the number of rows in my newly filtered buildings dataframe.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "157411 houses experienced a blackout in Houston, Texas."</code></pre>
+</div>
+</div>
+</section>
+<section id="investigate-socioeconomic-factors" class="level3">
+<h3 class="anchored" data-anchor-id="investigate-socioeconomic-factors">Investigate socioeconomic factors</h3>
+<p>I will now utilize the <code>acs</code> data to see if there is any relationship between blackout areas and different socioecnomic factors. Specifically, I looked to see if the outages were at all related to the median income. I will classify the NA buiding value ( buildings that did not experienced a drop of 200 nW cm<sup>-2</sup>sr<sup>-1)</sup> as <code>No Blackout</code>. From there, I can check to see if there are any differences in median values among tracts with a blackout versus tracts without a blackout. I’ll first create a map to visual median incomes across the county of Houston. I will add a centroid for each census group that experienced a blackout.</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="index_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="is-median-income-related-to-outages" class="level3">
+<h3 class="anchored" data-anchor-id="is-median-income-related-to-outages">Is median income related to outages?</h3>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="index_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>I created a faceted histogram plot to look into the distribution of median income for each blackout status. The map allowed us to geographically see the areas of Houston that experienced a blackout, but creating a histogram and printing out some summary statistics will let us determine a bit more specifically if any obvious median income trends can be deduced. The histogram above shows far more buidlings experienced a blackout rather than not, but the median incomes for the two groups don’t look too different. Both histograms are skewed right and the mean income for both groups looks to be pretty similar. Let’s look at the average median income for both groups to get a better idea on how much they differ.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "The mean Median income for census' that experienced a blackout is $71244.88"</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "The mean Median income for census' that did not experience a blackout is $73911.55"</code></pre>
+</div>
+</div>
+<p>The average median income for houses that did not experience a blackout is actually higher than those that did. We can dive into this relationship a bit more by creating a hypothesis test to see if the difference between the two groups is significant.</p>
+<p>Allow our hypotheses to be as follows: <span class="math display">\[H_{0}: \mu_{Blackout} - \mu_{No Blackout} = 0\]</span> <span class="math display">\[H_{A}: \mu_{Blackout} - \mu_{No Blackout} \neq 0\]</span></p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "p value: 1.601"</code></pre>
+</div>
+</div>
+<p>Since the p−value= 1.6 &gt; 0.05, we fail to reject the null that there is no difference between the average median income for tracts that experienced a blackout and tracts that did not experience a blackout. There is not a statistically significant difference (at the 5% significance level) in average median income levels across tracts that experienced a blackout and tracts that did not experience a blackout.</p>
+</section>
+<section id="results-and-limitations" class="level3">
+<h3 class="anchored" data-anchor-id="results-and-limitations">Results and Limitations</h3>
+<p>The map, histogram, and hypothesis testing above all point to median income not playing a role in predicting whether a house experienced a blackout or not. This study did not consider the fact that there may be more homes in lower income census tracts than higher income census tracts, and therefore we cannot make accurate findings from points on a map. The exclusion of homes within 200 meters could also disproportionately exclude lower median income homes. The study also did not account for the fact that moon could have been providing a lot of light on Febuary 7th, and we could have misclassified houses to begin with. Finally, the study only looked at median income and not any other socioecnomic factors. It could be that there is a different socioeconomic factor that is much more correlated with experiencing a blackout.</p>
+<p>This goal of this investigation was to become more familiar with spatial data and attempt to roughly quantify homes that experienced a blackout with satelittle data alone. The results of this analysis are not final and should not be cited.</p>
+<section id="two-years-later-texas-has-still-not-recovered-from-the-2021-storm" class="level4">
+<h4 class="anchored" data-anchor-id="two-years-later-texas-has-still-not-recovered-from-the-2021-storm">Two years later, Texas has still not recovered from the 2021 storm</h4>
+<p>Two years and billions of dollars later, Texas has somewhat recovered from the damage done by the 2021 storm and power outages, but it is not back to where it stood prior to the storm, especially in terms of the energy grid. Work has been done to make more energy vailable and make the grid better suited for extreme weather, but reporters claim that if an identical storm to that of Febuary 2021 were to hit right now, the energy grid would once again fail. Policy makers hope to bring about changes that would change Texas’ grid. The policy changes proposed so far include favoring fossil fuel producers and big energy companies<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>. While the status of the Texas grid has not changed, Texans have become more prepared for future storms by purchasing generators and supplies to hold them through a storm/outage.</p>
+
+
+</section>
+</section>
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Wikipedia. 2021. “2021 Texas power crisis.” Last modified October 2, 2021. <a href="https://en.wikipedia.org/wiki/2021_Texas_power_crisis" class="uri">https://en.wikipedia.org/wiki/2021_Texas_power_crisis</a>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>KUT.org. 2023.”Two years later: The 2021 blackout still shapes what it means to live in Texas.” <a href="https://www.kut.org/energy-environment/2023-02-17/two-years-later-the-2021-blackout-still-shapes-what-it-means-to-live-in-texas" class="uri">https://www.kut.org/energy-environment/2023-02-17/two-years-later-the-2021-blackout-still-shapes-what-it-means-to-live-in-texas</a><a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">Copyright 2023, Annie Adams</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+</body></html>

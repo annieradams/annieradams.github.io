@@ -1,0 +1,52 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  open-graph: true
+  site-url: https://annieradams.github.io/
+  favicon: images/logos/AA-logo-white.png
+
+  navbar:
+    title: false
+    logo: images/logos/AA_wname_logo_black.png
+    right:
+      - href: index.qmd
+        text: Home
+      - about.qmd
+      - posts.qmd
+      - href: resume/aradams.pdf
+        text: Resume
+      - text: Contact Info
+        menu:
+          - icon: linkedin
+            text: LinkedIn
+            href: https://www.linkedin.com/in/annaliese-adams/
+            target: _blank
+          - icon: envelope-fill
+            text: email
+            href: mailto:aradams@ucsb.edu
+      - icon: github
+        href: https://github.com/annieradams
+    
+  
+      
+
+  page-footer:
+    background: light
+    left: "Copyright 2023, Annie Adams"
+
+
+format:
+  html:
+    page-layout: full
+    sidebar: false
+    theme:
+      - styles.scss
+    mainfont: lato
+    #css: styles.css
+    toc: true
+    
+
+editor: visual
+

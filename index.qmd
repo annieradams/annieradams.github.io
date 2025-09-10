@@ -1,0 +1,23 @@
+---
+title: "Annie Adams"
+image: images/headshot.jpg
+toc: false
+about:
+  template: jolla
+  image-shape: round
+  image-width: 10cm
+  links: 
+    - text: LinkedIn
+      href: https://www.linkedin.com/in/annaliese-adams/
+      icon: linkedin
+    - text: Github
+      href: https://github.com/annieradams
+      icon: github
+    - text: Email
+      href: mailto:aradams@ucsb.edu
+      icon: envelope-fill
+---
+
+### Hi there! Welcome to my website!
+
+My name is Annie Adams! After receiving my Master of Environmental Data Science from the Bren School of Environmental Science & Management in June of 2024, I just couldn't stay away! I am now working as a lecturer in the Master of Environmental Data Science program, helping to develop coursework and teach the next cohort of environmental data scientists! When I am not behind a computer, I love to hike, cycle, explore new countries, and bikepack! Check out the rest of my website to learn more about me and see what I have been up to!
