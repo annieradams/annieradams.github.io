@@ -11,7 +11,7 @@ format:
     highlight-style: github
 ---
 
-## What We'll Cover Today
+## What We'll Cover Today{#overview}
 
 ::: incremental
 - 📥 **Import** raw CSV data with `read_csv()`
@@ -27,7 +27,7 @@ format:
 
 ---
 
-## 🗳️ Quick Poll
+## 🗳️ Quick Poll{poll-1}
 
 **Q1: What's your current familiarity with R?**
 
@@ -38,7 +38,7 @@ format:
 
 ---
 
-## 🗳️ Quick Poll
+## 🗳️ Quick Poll{poll-2}
 
 **Q2: How do you plan to use these skills?**
 

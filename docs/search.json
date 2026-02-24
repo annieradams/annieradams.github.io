@@ -131,5 +131,26 @@
     "title": "From Field to Figure",
     "section": "🗳️ Quick Poll",
     "text": "🗳️ Quick Poll\nQ2: How do you plan to use these skills?\n\n🌿 Analyzing ecological / environmental data\n📊 General data cleaning & visualization\n🎓 Academic research or coursework\n💼 Professional / industry work\n🔍 Just exploring — not sure yet!"
+  },
+  {
+    "objectID": "slides/workshop_slides.html#overview",
+    "href": "slides/workshop_slides.html#overview",
+    "title": "From Field to Figure",
+    "section": "What We’ll Cover Today",
+    "text": "What We’ll Cover Today\n\n📥 Import raw CSV data with read_csv()\n🧹 Clean messy text, column names, and inconsistent formatting\n🔄 Reshape wide data into tidy long format with pivot_longer()\n📊 Visualize patterns using ggplot2\n\n\n\nAll our data cleaning and wrangling is powered by the Tidyverse — a collection of R packages designed for clean, readable data workflows."
+  },
+  {
+    "objectID": "slides/workshop_slides.html#quick-pollpoll-1",
+    "href": "slides/workshop_slides.html#quick-pollpoll-1",
+    "title": "From Field to Figure",
+    "section": "🗳️ Quick Poll{poll-1}",
+    "text": "🗳️ Quick Poll{poll-1}\nQ1: What’s your current familiarity with R?\n\nComplete beginner — never opened RStudio\nSome experience — I’ve run a few scripts\nComfortable — I use R regularly\nAdvanced — I could teach this workshop!"
+  },
+  {
+    "objectID": "slides/workshop_slides.html#quick-pollpoll-2",
+    "href": "slides/workshop_slides.html#quick-pollpoll-2",
+    "title": "From Field to Figure",
+    "section": "🗳️ Quick Poll{poll-2}",
+    "text": "🗳️ Quick Poll{poll-2}\nQ2: How do you plan to use these skills?\n\n🌿 Analyzing ecological / environmental data\n📊 General data cleaning & visualization\n🎓 Academic research or coursework\n💼 Professional / industry work\n🔍 Just exploring — not sure yet!"
   }
 ]
