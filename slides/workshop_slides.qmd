@@ -1,0 +1,108 @@
+---
+title: "From Field to Figure"
+subtitle: "A Beginner's Guide to Taming Messy Ecological Data in R"
+author: "Annie Adams"
+format:
+  revealjs:
+    theme: [simple, workshop_theme.scss]
+    slide-number: true
+    transition: fade
+    footer: From Field to Figure Workshop
+    highlight-style: github
+---
+
+## What We'll Cover Today
+
+::: incremental
+- 📥 **Import** raw CSV data with `read_csv()`
+- 🧹 **Clean** messy text, column names, and inconsistent formatting
+- 🔄 **Reshape** wide data into tidy long format with `pivot_longer()`
+- 📊 **Visualize** patterns using `ggplot2`
+:::
+
+. . .
+
+> All our data cleaning and wrangling is powered by the **Tidyverse** — a collection of R packages designed for clean, readable data workflows.
+
+
+---
+
+## 🗳️ Quick Poll
+
+**Q1: What's your current familiarity with R?**
+
+- Complete beginner — never opened RStudio
+- Some experience — I've run a few scripts
+- Comfortable — I use R regularly
+- Advanced — I could teach this workshop!
+
+---
+
+## 🗳️ Quick Poll
+
+**Q2: How do you plan to use these skills?**
+
+- 🌿 Analyzing ecological / environmental data
+- 📊 General data cleaning & visualization
+- 🎓 Academic research or coursework
+- 💼 Professional / industry work
+- 🔍 Just exploring — not sure yet!
+
+---
+
+
+## The Dataset{.smaller}
+
+**Source:** USDA National Agricultural Statistics Service (NASS)  
+[esmis.nal.usda.gov/publication/honey-bee-colonies](https://esmis.nal.usda.gov/publication/honey-bee-colonies)
+
+Tracks the percentage of U.S. honey bee colonies affected by various stressors across **44 states** and **6 quarters** (Q1 2024 – Q2 2025).
+
+| Variable | Type | Description |
+|---|---|---|
+| `Quarter` | character | Survey quarter (e.g. `Q1_2024`) |
+| `Period` | character | Text label (e.g. `Jan-Mar 2024`) |
+| `State` | character | U.S. state name — inconsistently cased in raw data |
+| `Varroa_Mites_Pct` | numeric | % of colonies affected by Varroa mites |
+| `Other_Pests_Parasites_Pct` | numeric | % affected by other pests or parasites |
+| `Diseases_Pct` | numeric | % affected by diseases |
+| `Pesticides_Pct` | numeric | % affected by pesticide exposure |
+| `Other_Pct` | numeric | % affected by other causes |
+| `Unknown_Pct` | numeric | % affected by unknown causes |
+
+---
+
+## Let's Get Started! 🐝
+
+To follow along, please download the workshop materials:
+
+<br>
+
+::: {style="text-align: center; font-size: 1.2em;"}
+📦 **[Workshop Materials](https://downgit.github.io/#/home?url=https://github.com/annieradams/esa-workshop)**
+:::
+
+<br>
+
+The folder includes:
+
+- `honeybee_stressors_messy.csv` — the "messified" dataset we just looked at
+- `stressors.csv` — the original dataset from the USDA
+- `workshop_template.qmd` — the starter file we'll code in together
+- `workshop_solution.qmd` — the completed file to reference if you miss a step! 
+
+---
+
+
+## Keep Learning 🌱
+
+| Resource | Link |
+|---|---|
+| R for Data Science | [r4ds.hadley.nz](https://r4ds.hadley.nz/) |
+| ggplot2 Cheatsheet | [rstudio.github.io/cheatsheets](https://rstudio.github.io/cheatsheets/html/data-visualization.html) |
+| Tidyverse Docs | [tidyverse.org](https://www.tidyverse.org/) |
+
+<br>
+
+**Thank you for joining!**  
+Questions? Feel free to [email me](mailto:aradams@ucsb.edu)! 

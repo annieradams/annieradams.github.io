@@ -61,5 +61,75 @@
     "title": "My Blog",
     "section": "",
     "text": "Streamlining Carbon Accounting for Darn Tough Vermont\n\n\n\n\n\n\n\nR\n\n\nShiny\n\n\nCarbon accounting\n\n\n\n\nHow we helped a sock manufacturer calculate their carbon emissions and pinpoint ways to meet reduction targets\n\n\n\n\n\n\nJun 18, 2024\n\n\nAnnie Adams, Carly Caswell, Flora Hamilton, Linus Ghanadan\n\n\n\n\n\n\n  \n\n\n\n\nSeattle Bike Trends\n\n\n\n\n\n\n\nData Visualization\n\n\nR\n\n\ninfographic\n\n\n\n\n\n\n\n\n\n\n\nMar 2, 2024\n\n\nAnnie Adams\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "slides/workshop_slides.html#what-well-cover-today",
+    "href": "slides/workshop_slides.html#what-well-cover-today",
+    "title": "From Field to Figure",
+    "section": "What We’ll Cover Today",
+    "text": "What We’ll Cover Today\n\n📥 Import raw CSV data with read_csv()\n🧹 Clean messy text, column names, and inconsistent formatting\n🔄 Reshape wide data into tidy long format with pivot_longer()\n📊 Visualize patterns using ggplot2\n\n\n\nAll our data cleaning and wrangling is powered by the Tidyverse — a collection of R packages designed for clean, readable data workflows."
+  },
+  {
+    "objectID": "slides/workshop_slides.html#the-dataset",
+    "href": "slides/workshop_slides.html#the-dataset",
+    "title": "From Field to Figure",
+    "section": "The Dataset",
+    "text": "The Dataset\nSource: USDA National Agricultural Statistics Service (NASS)\nesmis.nal.usda.gov/publication/honey-bee-colonies\nTracks the percentage of U.S. honey bee colonies affected by various stressors across 44 states and 6 quarters (Q1 2024 – Q2 2025).\n\n\n\n\n\n\n\n\nVariable\nType\nDescription\n\n\n\n\nQuarter\ncharacter\nSurvey quarter (e.g. Q1_2024)\n\n\nPeriod\ncharacter\nText label (e.g. Jan-Mar 2024)\n\n\nState\ncharacter\nU.S. state name — inconsistently cased in raw data\n\n\nVarroa_Mites_Pct\nnumeric\n% of colonies affected by Varroa mites\n\n\nOther_Pests_Parasites_Pct\nnumeric\n% affected by other pests or parasites\n\n\nDiseases_Pct\nnumeric\n% affected by diseases\n\n\nPesticides_Pct\nnumeric\n% affected by pesticide exposure\n\n\nOther_Pct\nnumeric\n% affected by other causes\n\n\nUnknown_Pct\nnumeric\n% affected by unknown causes"
+  },
+  {
+    "objectID": "slides/workshop_slides.html#our-cleaning-pipeline",
+    "href": "slides/workshop_slides.html#our-cleaning-pipeline",
+    "title": "From Field to Figure",
+    "section": "Our Cleaning Pipeline",
+    "text": "Our Cleaning Pipeline\nstressors &lt;- stressors_messy |&gt;\n  rename(state = State, varroa_mites = `Varroa mites (%)`, ...) |&gt;\n  mutate(state = str_to_title(state)) |&gt;\n  mutate(across(varroa_mites:unknown,\n    \\(x) str_replace_all(x, \"\\\\(Z\\\\)\", \"0\"))) |&gt;\n  mutate(across(varroa_mites:unknown, parse_number)) |&gt;\n  filter(str_detect(quarter, \"2024\")) |&gt;\n  pivot_longer(cols = varroa_mites:unknown,\n               names_to = \"stressor\",\n               values_to = \"pct_affected\")\nThe pipe |&gt; chains each step — readable top to bottom, like a recipe."
+  },
+  {
+    "objectID": "slides/workshop_slides.html#what-we-found",
+    "href": "slides/workshop_slides.html#what-we-found",
+    "title": "From Field to Figure",
+    "section": "What We Found",
+    "text": "What We Found\n\n\nNationally, Varroa Mites dominate at a 24% average — more than 3× the next stressor. The hardest-hit states are New Mexico (59.3%), Alabama (47.0%), and California (42.6%).\n\nIn California, Varroa peaks in winter at 56.8% (Jan–Mar) and falls to 30.1% by Oct–Dec. Pesticide pressure shows the reverse — near zero in Q1, climbing to 13.8% in Q4.\n\n\nfacet_wrap() lets us compare all six stressors side by side in a single figure."
+  },
+  {
+    "objectID": "slides/workshop_slides.html#quick-poll-tell-us-about-you",
+    "href": "slides/workshop_slides.html#quick-poll-tell-us-about-you",
+    "title": "From Field to Figure",
+    "section": "🗳️ Quick Poll — Tell Us About You!",
+    "text": "🗳️ Quick Poll — Tell Us About You!\nQ1: What’s your current familiarity with R?\n\n🟢 Complete beginner — never opened RStudio\n🟡 Some experience — I’ve run a few scripts\n🔵 Comfortable — I use R regularly\n🟣 Advanced — I could teach this workshop!\n\n\nQ2: How do you plan to use these skills?\n\n🌿 Analyzing ecological / environmental data\n📊 General data cleaning & visualization\n🎓 Academic research or coursework\n💼 Professional / industry work\n🔍 Just exploring — not sure yet!"
+  },
+  {
+    "objectID": "slides/workshop_slides.html#keep-learning",
+    "href": "slides/workshop_slides.html#keep-learning",
+    "title": "From Field to Figure",
+    "section": "Keep Learning 🌱",
+    "text": "Keep Learning 🌱\n\n\n\nResource\nLink\n\n\n\n\nR for Data Science\nr4ds.hadley.nz\n\n\nggplot2 Cheatsheet\nrstudio.github.io/cheatsheets\n\n\nTidyverse Docs\ntidyverse.org\n\n\n\n\nThank you for joining!\nQuestions? Feel free to email me!"
+  },
+  {
+    "objectID": "slides/workshop_slides.html#quick-poll",
+    "href": "slides/workshop_slides.html#quick-poll",
+    "title": "From Field to Figure",
+    "section": "🗳️ Quick Poll",
+    "text": "🗳️ Quick Poll\nQ1: What’s your current familiarity with R?\n\nComplete beginner — never opened RStudio\nSome experience — I’ve run a few scripts\nComfortable — I use R regularly\nAdvanced — I could teach this workshop!"
+  },
+  {
+    "objectID": "slides/workshop_slides.html#lets-get-started",
+    "href": "slides/workshop_slides.html#lets-get-started",
+    "title": "From Field to Figure",
+    "section": "Let’s Get Started! 🐝",
+    "text": "Let’s Get Started! 🐝\nTo follow along, please download the workshop materials:\n\n\n📦 Workshop Materials\n\n\nThe folder includes:\n\nhoneybee_stressors_messy.csv — the “messified” dataset we just looked at\nstressors.csv — the original dataset from the USDA\nworkshop_template.qmd — the starter file we’ll code in together\nworkshop_solution.qmd — the completed file to reference if you miss a step!"
+  },
+  {
+    "objectID": "slides/workshop_slides.html#quick-pol",
+    "href": "slides/workshop_slides.html#quick-pol",
+    "title": "From Field to Figure",
+    "section": "🗳️ Quick Pol",
+    "text": "🗳️ Quick Pol\n\n\nQ1: What’s your current familiarity with R?\n\nComplete beginner — never opened RStudio\nSome experience — I’ve run a few scripts\nComfortable — I use R regularly\nAdvanced — I could teach this workshop!\n\n\nQ2: How do you plan to use these skills?\n\n🌿 Analyzing ecological / environmental data\n📊 General data cleaning & visualization\n🎓 Academic research or coursework\n💼 Professional / industry work\n🔍 Just exploring — not sure yet!"
+  },
+  {
+    "objectID": "slides/workshop_slides.html#quick-poll-1",
+    "href": "slides/workshop_slides.html#quick-poll-1",
+    "title": "From Field to Figure",
+    "section": "🗳️ Quick Poll",
+    "text": "🗳️ Quick Poll\nQ2: How do you plan to use these skills?\n\n🌿 Analyzing ecological / environmental data\n📊 General data cleaning & visualization\n🎓 Academic research or coursework\n💼 Professional / industry work\n🔍 Just exploring — not sure yet!"
   }
 ]

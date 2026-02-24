@@ -17,3 +17,5 @@ draft_posts/blackout_houston_post/data/
 *.gdb
 *.gdbtable
 *.gpkg
+
+**/*.quarto_ipynb

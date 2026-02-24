@@ -1,0 +1,261 @@
+/*-- scss:defaults --*/
+
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+// Color palette — earthy, ecological
+$honey-gold:     #E8A020;
+$honey-light:    #F5D080;
+$forest-green:   #2D6A4F;
+$sage:           #74C69D;
+$cream:          #FDFAF3;
+$warm-gray:      #6B6560;
+$charcoal:       #2C2A27;
+$soft-white:     #FFFFFF;
+
+// Revealjs overrides
+$backgroundColor:       $cream;
+$mainColor:             $charcoal;
+$headingColor:          $forest-green;
+$linkColor:             $honey-gold;
+$selectionBackgroundColor: $honey-light;
+
+$mainFont:              'Inter', sans-serif;
+$headingFont:           'Playfair Display', serif;
+$codeFont:              'JetBrains Mono', monospace;
+
+$mainFontSize:          28px;
+$headingFontWeight:     700;
+$headingTextTransform:  none;
+$headingLetterSpacing:  -0.02em;
+
+$blockMargin:           0.6em;
+$borderRadius:          8px;
+
+
+/*-- scss:rules --*/
+
+// ── Slide base ──────────────────────────────────────────────
+.reveal .slides {
+  text-align: left;
+}
+
+.reveal .slides section {
+  padding: 2rem 2.5rem;
+}
+
+// ── Headings ────────────────────────────────────────────────
+.reveal h1 {
+  font-size: 2.2em;
+  color: $forest-green;
+  line-height: 1.15;
+  border-bottom: 3px solid $honey-gold;
+  padding-bottom: 0.2em;
+  margin-bottom: 0.6em;
+}
+
+.reveal h2 {
+  font-size: 1.6em;
+  color: $forest-green;
+  border-left: 5px solid $honey-gold;
+  padding-left: 0.5em;
+  margin-bottom: 0.7em;
+}
+
+.reveal h3 {
+  font-size: 1.2em;
+  color: $warm-gray;
+  font-family: $mainFont;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+// ── Title slide ─────────────────────────────────────────────
+.reveal .title-slide,
+#title-slide {
+  background: linear-gradient(145deg, $forest-green 0%, darken($forest-green, 10%) 100%);
+  text-align: center;
+
+  .title {
+    color: $soft-white;
+    font-size: 2.4em;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.25);
+    border: none;
+    padding: 0;
+  }
+
+  .subtitle {
+    color: $honey-light;
+    font-family: $mainFont;
+    font-weight: 300;
+    font-size: 1.1em;
+    margin-top: 0.4em;
+  }
+
+  .author {
+    color: rgba(255,255,255,0.75);
+    font-size: 0.85em;
+    margin-top: 1.5em;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+}
+
+// ── Body text ────────────────────────────────────────────────
+.reveal p {
+  line-height: 1.7;
+  color: $charcoal;
+}
+
+.reveal li {
+  margin-bottom: 0.45em;
+  line-height: 1.6;
+}
+
+.reveal strong {
+  color: $forest-green;
+  font-weight: 600;
+}
+
+// ── Blockquote ───────────────────────────────────────────────
+.reveal blockquote {
+  background: lighten($honey-light, 18%);
+  border-left: 4px solid $honey-gold;
+  border-radius: $borderRadius;
+  padding: 0.75em 1.2em;
+  color: $charcoal;
+  font-style: normal;
+  font-size: 0.9em;
+  box-shadow: none;
+  width: 100%;
+  margin: 1em 0;
+
+  p { margin: 0; }
+}
+
+// ── Code blocks ──────────────────────────────────────────────
+.reveal pre {
+  border-radius: $borderRadius;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  border: 1px solid lighten($charcoal, 60%);
+}
+
+.reveal pre code {
+  font-family: $codeFont;
+  font-size: 0.72em;
+  line-height: 1.65;
+  padding: 1em 1.2em;
+}
+
+.reveal code:not(pre code) {
+  background: lighten($honey-light, 16%);
+  color: darken($forest-green, 5%);
+  border-radius: 4px;
+  padding: 0.1em 0.35em;
+  font-size: 0.88em;
+  font-family: $codeFont;
+}
+
+// ── Tables ───────────────────────────────────────────────────
+.reveal table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82em;
+  margin: 0.8em 0;
+
+  thead tr {
+    background: $forest-green;
+    color: $soft-white;
+
+    th {
+      padding: 0.6em 0.9em;
+      text-align: left;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+    }
+  }
+
+  tbody tr {
+    border-bottom: 1px solid lighten($warm-gray, 35%);
+    transition: background 0.15s;
+
+    &:nth-child(even) { background: lighten($honey-light, 20%); }
+    &:hover { background: lighten($sage, 28%); }
+
+    td {
+      padding: 0.55em 0.9em;
+      color: $charcoal;
+    }
+  }
+}
+
+// ── Poll slide ───────────────────────────────────────────────
+// Give the poll slide a warm honey background to stand out
+.reveal section[data-background] {
+  // placeholder — users can add data-background-color to the slide
+}
+
+// Style the poll emoji bullets nicely
+.reveal .poll-question {
+  background: $soft-white;
+  border-radius: $borderRadius;
+  padding: 1em 1.4em;
+  border: 1px solid lighten($warm-gray, 40%);
+  margin-bottom: 1em;
+}
+
+// ── Footer ────────────────────────────────────────────────────
+.reveal .footer {
+  font-size: 0.62em;
+  color: $warm-gray;
+  letter-spacing: 0.04em;
+}
+
+// ── Slide number ─────────────────────────────────────────────
+.reveal .slide-number {
+  background: $honey-gold;
+  color: $charcoal;
+  border-radius: 4px;
+  font-size: 0.65em;
+  font-weight: 600;
+  padding: 2px 7px;
+}
+
+// ── Incremental list reveal ──────────────────────────────────
+.reveal .slides .fragment {
+  opacity: 0.25;
+  transition: opacity 0.35s ease;
+
+  &.visible { opacity: 1; }
+}
+
+// ── Two-column layout ─────────────────────────────────────────
+.reveal .columns {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 1em;
+  width: 100%;
+}
+
+.reveal .columns .column {
+  flex-shrink: 0;
+  padding: 0 0.8em;
+  box-sizing: border-box;
+}
+
+// ── Horizontal rule ───────────────────────────────────────────
+.reveal hr {
+  border: none;
+  border-top: 2px solid lighten($honey-gold, 20%);
+  margin: 1em 0;
+}
+
+// ── Links ─────────────────────────────────────────────────────
+.reveal a {
+  color: $honey-gold;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+
+  &:hover { color: darken($honey-gold, 15%); }
+}
