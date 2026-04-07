@@ -1,12 +1,13 @@
 ---
 title: "Annie Adams"
+subtitle: "Environmental Data Scientist & Educator"
 image: images/headshot.jpg
 toc: false
 about:
-  template: jolla
+  template: trestles
   image-shape: round
-  image-width: 10cm
-  links: 
+  image-width: 14rem
+  links:
     - text: LinkedIn
       href: https://www.linkedin.com/in/annaliese-adams/
       icon: linkedin

@@ -1,56 +1,290 @@
 /*-- scss:defaults --*/
 
+// ── Fonts ─────────────────────────────────────────────────────────────────────
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
 
+// ── Earthy Palette ────────────────────────────────────────────────────────────
+$espresso:       #2C1A0E;   // navbar, footer, strong anchors
+$bark:           #4A3728;   // headings, dark text
+$terracotta:     #B85C38;   // links, accents
+$clay:           #C97B55;   // hover states
+$sand:           #E8D5BC;   // navbar foreground, subtle highlights
+$warm-ivory:     #FAF7F1;   // body background
+$warm-white:     #FFFFFF;   // cards / panels
+$warm-gray:      #6B5A4E;   // body text
+$mid-earth:      #9E8070;   // captions, metadata
+$light-earth:    #EDE0D0;   // borders, dividers, code bg
+$sage:           #7A9471;   // secondary accent (nature nod)
 
-//Import Fonts
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+$font-family-montserrat: 'Montserrat', sans-serif;
 
-
-// Colors
-$mint: #dde7dd;
-$earth-green: #6a8f6b;
-$midnight-blue: #221c42;
-$pale: #ffe0c9;
-$white: #ffffff;
-$purple: #9158A2;
-$gray: #64605f;
-$cream: #F4F3EE;
-$light-gray: #d3d3d3; 
-
-
-
-$Sand-Tan: #e1b382;
-$Sand-Tan-Shadow: #c89666;
-$Night-Blue: #2d545e;
-$Night-Blue-Shadow: #12343b;
-$tan: #EBCCAB;
-
-
-$font-family-montserrat: 'Montserrat', sans-serif; 
-
-
-
-// Base document colors
-$navbar-bg: $Night-Blue; // navbar
-$navbar-fg: $tan; // navbar foreground elements
-$navbar-hl: $purple; // highlight color when hovering over navbar links
-$body-bg: $tan; // page background 
-$body-color: $Night-Blue; // page text 
-$footer-bg: $Night-Blue; // footer 
-$link-color: $purple; // hyperlinks 
-
-// Inline code
-$code-bg: $cream; // inline code background color
-$code-color: $purple; // inline code text color
-
-// Code blocks
-$code-block-bg: $cream; // code block background color
-
-
+// ── Quarto theme wires ────────────────────────────────────────────────────────
+$navbar-bg:    $espresso;
+$navbar-fg:    $sand;
+$navbar-hl:    $clay;
+$body-bg:      $warm-ivory;
+$body-color:   $warm-gray;
+$footer-bg:    $espresso;
+$link-color:   $terracotta;
+$code-bg:      $light-earth;
+$code-color:   $bark;
+$code-block-bg: $light-earth;
 
 
 /*-- scss:rules --*/
-.custom-montserrat-text { 
-  font-family: $font-family-montserrat;
+
+// ── Base ──────────────────────────────────────────────────────────────────────
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Lato', sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.78;
+  color: $warm-gray;
+  background-color: $warm-ivory;
 }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: $bark;
+  letter-spacing: -0.01em;
+}
+
+a {
+  color: $terracotta;
+  text-decoration: none;
+  transition: color 0.2s;
+  &:hover { color: $clay; text-decoration: underline; }
+}
+
+
+// ── Navbar ────────────────────────────────────────────────────────────────────
+
+.navbar {
+  background-color: $espresso !important;
+  border-bottom: 3px solid $clay;
+  padding: 0.55rem 1.5rem;
+
+  .navbar-brand img { max-height: 52px; }
+
+  .nav-link {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $sand !important;
+    padding: 0.4rem 0.85rem;
+    border-radius: 4px;
+    transition: background 0.18s, color 0.18s;
+
+    &:hover, &:focus {
+      color: #fff !important;
+      background: rgba($clay, 0.25);
+    }
+  }
+}
+
+
+// ── Footer ────────────────────────────────────────────────────────────────────
+
+.nav-footer {
+  background-color: $espresso !important;
+  color: rgba($sand, 0.7);
+  font-size: 0.82rem;
+  padding: 1rem 1.5rem;
+  border-top: 2px solid rgba($clay, 0.35);
+
+  a { color: $clay; &:hover { color: #fff; } }
+}
+
+
+// ── Home page (trestles template) ────────────────────────────────────────────
+
+#quarto-content .about-entity {
+
+  // left column photo
+  .about-image {
+    border: 4px solid $light-earth;
+    box-shadow: 0 8px 32px rgba($espresso, 0.18);
+  }
+
+  // name
+  .about-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.7rem;
+    color: $bark;
+    margin-bottom: 0.2rem;
+  }
+
+  // subtitle / role
+  .about-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: $terracotta;
+    margin-bottom: 1.2rem;
+  }
+
+  // divider line between left and right columns
+  .about-contents {
+    border-left: 2px solid $light-earth;
+    padding-left: 2.5rem;
+    text-align: center;
+  }
+
+  // social link buttons
+  .about-links {
+    margin-top: 1.4rem;
+    gap: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+    .about-link {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      background-color: $espresso;
+      color: $sand !important;
+      border: 2px solid $espresso;
+      border-radius: 5px;
+      padding: 0.4rem 1rem;
+      transition: background 0.2s, border-color 0.2s, color 0.2s;
+      text-decoration: none !important;
+
+      &:hover {
+        background-color: $terracotta;
+        border-color: $terracotta;
+        color: #fff !important;
+      }
+    }
+  }
+}
+
+
+// ── Blog listing cards ────────────────────────────────────────────────────────
+
+.quarto-listing .list-item {
+  background: $warm-white;
+  border: 1px solid $light-earth;
+  border-radius: 8px;
+  padding: 1.4rem 1.6rem;
+  margin-bottom: 1.1rem;
+  transition: box-shadow 0.2s, transform 0.2s;
+
+  &:hover {
+    box-shadow: 0 6px 22px rgba($espresso, 0.1);
+    transform: translateY(-2px);
+  }
+
+  .listing-title a {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: $bark;
+    &:hover { color: $terracotta; text-decoration: none; }
+  }
+
+  .listing-description { color: $mid-earth; font-size: 0.92rem; }
+  .listing-date, .listing-author { font-size: 0.8rem; color: $mid-earth; }
+}
+
+.quarto-category {
+  background-color: $light-earth !important;
+  color: $bark !important;
+  border: 1px solid darken($light-earth, 8%) !important;
+  border-radius: 20px !important;
+  font-size: 0.75rem !important;
+  font-weight: 700 !important;
+  padding: 0.18rem 0.8rem !important;
+  transition: background 0.2s;
+
+  &:hover {
+    background-color: $terracotta !important;
+    color: #fff !important;
+    border-color: $terracotta !important;
+  }
+}
+
+
+// ── Page title block ──────────────────────────────────────────────────────────
+
+.page-title, #title-block-header .title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: $bark;
+  border-bottom: 3px solid $light-earth;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+#title-block-header .subtitle {
+  color: $mid-earth;
+  font-style: normal;
+}
+
+
+// ── Inner page section headings ───────────────────────────────────────────────
+
+main h3 {
+  color: $bark;
+  margin-top: 2.2rem;
+}
+
+
+// ── Blockquotes ───────────────────────────────────────────────────────────────
+
+blockquote {
+  border-left: 4px solid $clay;
+  background: lighten($light-earth, 5%);
+  border-radius: 0 6px 6px 0;
+  padding: 0.9rem 1.3rem;
+  margin: 1.6rem 0;
+  color: $mid-earth;
+  font-style: italic;
+}
+
+
+// ── Code ──────────────────────────────────────────────────────────────────────
+
+code {
+  background: $light-earth;
+  color: $bark;
+  border-radius: 3px;
+  padding: 0.12em 0.4em;
+  font-size: 0.87em;
+}
+
+pre code { background: none; padding: 0; color: inherit; }
+
+div.sourceCode, pre {
+  background: $light-earth;
+  border: 1px solid darken($light-earth, 8%);
+  border-radius: 8px;
+}
+
+
+// ── TOC ───────────────────────────────────────────────────────────────────────
+
+#TOC {
+  border-left: 3px solid $light-earth;
+  padding-left: 1rem;
+
+  a { color: $mid-earth; font-size: 0.87rem; &:hover { color: $terracotta; } }
+  .active { color: $terracotta; font-weight: 700; }
+}
+
+
+// ── Utility ───────────────────────────────────────────────────────────────────
+
+.custom-montserrat-text { font-family: $font-family-montserrat; }

@@ -9,7 +9,8 @@ website:
 
   navbar:
     title: false
-    logo: images/logos/AA_wname_logo_black.png
+    logo: images/logos/AA_wname_logo_white.png.png
+    logo-href: index.html
     right:
       - href: index.qmd
         text: Home
