@@ -16,8 +16,8 @@ website:
         text: Home
       - about.qmd
       - posts.qmd
-      - href: resume/aradams.pdf
-        text: Resume
+      - href: resume/Annie_Adams_CV.pdf
+        text: CV
       - text: Contact Info
         menu:
           - icon: linkedin
