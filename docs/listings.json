@@ -2,8 +2,9 @@
   {
     "listing": "/posts.html",
     "items": [
-      "/posts/scrollytelling/index.html",
+      "/posts/strava_dash/index.html",
       "/posts/stay-relevant/index.html",
+      "/posts/scrollytelling/index.html",
       "/posts/capstone-project-post/index.html",
       "/posts/bike_infographic/index.html"
     ]

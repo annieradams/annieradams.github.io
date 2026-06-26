@@ -1,0 +1,16 @@
+---
+title: "Strava Dashboard"
+description: |
+  A dashboard analyzing all my Strava activites and housing a maintenance log for bike service
+author:
+  - name: Annie Adams
+date: 2026-06-26
+categories: [Shiny, R]
+image: images/strava_plot.png
+---
+
+
+<iframe src="https://annieradams.shinyapps.io/strava_dashboard/"
+        width="100%" height="800px" 
+        frameborder="0">
+</iframe>
